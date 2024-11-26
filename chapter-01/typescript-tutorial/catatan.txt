@@ -1,0 +1,3 @@
+intinya pak smilga tak urus masalah yg lainya 
+focus pada yg kit abuat skgn nah kita buat ttutorial.ts 
+utk hal tsb kalau pakai vite ini di import di main.ts ( yg mana pusat kendali dari awal program)
