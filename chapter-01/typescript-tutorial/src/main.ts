@@ -2,7 +2,8 @@ import "./style.css";
 import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
-import "./tutorial_01.ts";
+//per file nnti ganti2 setiap kemajuan belajar diganti sourcenya !
+import "./Object/04_PracticeSpread.ts";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
