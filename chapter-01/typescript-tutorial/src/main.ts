@@ -3,7 +3,7 @@ import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
 //per file nnti ganti2 setiap kemajuan belajar diganti sourcenya !
-import "./Object/04_PracticeSpread.ts";
+import "./fundamental_continue/03_chalenge_typealias.ts";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
