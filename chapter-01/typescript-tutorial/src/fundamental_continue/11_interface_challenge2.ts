@@ -54,4 +54,8 @@ function getEmployee(): Person | dogOwner | Manager {
     };
   }
 }
-console.log(getEmployee());
+//tugas create variable employee dimana bisa Person | dogOwner | Manager
+// dimana assigne sebgai hasil dari return getEmployee function
+
+const employee: Person | dogOwner | Manager = getEmployee();
+console.log("result employee :", employee);
