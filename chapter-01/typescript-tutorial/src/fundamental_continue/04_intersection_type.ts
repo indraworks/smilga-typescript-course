@@ -13,3 +13,49 @@ nah stlahnya utk variablenya akan menjadi
 const bookDisc = Book & discBook = {id,name,price,disPrice}
 sbb utk lengkap contonya
 */
+
+type Book = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+const Book1: Book = {
+  id: 1,
+  name: "HyperCooder",
+  price: 25,
+};
+
+const Book2: Book = {
+  id: 2,
+  name: "captain marvel 2",
+  price: 37,
+};
+
+//nah skrng ada discoubtBook dgn element object discPrice
+//ini akan buat jadi error krn di type Book tak ada element object discPricenya
+//sbb ini error :
+// const discountBook:Book = {
+//     id:93,
+//     name:"Kamasutra ver 2",
+//     price:161,
+// discountPrice:20 ini error merah
+
+// }
+//nah cara atasi diatas kita akan buat  typeDiscBook
+type DiscBook = { discountPrice: number };
+
+//nah stlahnya kita buat utk taid variable yg ada Element discount
+//kita gabung dgn typeBook krn typeBook sudah wakili {id,name,price}
+//dan utk type DiscBook mewakili element yg baru {discountPrice}
+//jadi cara penulisan variable utk discountBook dgb intersection
+//yaitu gabungan antara type Book dan DiscBook cara tulis snbb
+
+const DiscountBook1: Book & DiscBook = {
+  id: 24,
+  name: "Kamasutra ultimate",
+  price: 121,
+  discountPrice: 34,
+};
+
+console.log(DiscountBook1);

@@ -673,7 +673,11 @@ console.log(result);
 
 ## Interface - Methods (more options)
 
-It's generally a good practice to match the structure of the interface and the implementing object or class as closely as possible. This makes the code easier to understand and maintain. So, if printAuthor is defined as a method in the Book interface, it would be more consistent to implement it as a method in the deepWork object.
+It's generally a good practice to match the structure of the interface and
+the implementing object or class as closely as possible.
+This makes the code easier to understand and maintain.
+So, if printAuthor is defined as a method in the Book interface,
+it would be more consistent to implement it as a method in the deepWork object.
 
 ```ts
 interface Book {
@@ -726,12 +730,18 @@ console.log(result);
 
 ## Challenge
 
-- Start by defining an interface Computer using the interface keyword. This will serve as a blueprint for objects that will be of this type.
-- Inside the interface, define the properties that the object should have. In this case, we have id, brand, ram, and storage.
+- Start by defining an interface Computer using the interface keyword.
+  This will serve as a blueprint for objects that will be of this type.
+- Inside the interface, define the properties that the object should have.
+  In this case, we have id, brand, ram, and storage.
 - Use the readonly keyword before the id property to indicate that it cannot be changed once it's set.
-- Use the ? after the storage property to indicate that this property is optional and may not exist on all objects of this type.
-- Also inside the interface, define any methods that the object should have. In this case, we have upgradeRam, which is a function that takes a number and returns a number.
-- Now that we have our interface, we can create an object that adheres to this interface. This object should have all the properties defined in the interface (except for optional ones, which are... optional), and the methods should be implemented.
+- Use the ? after the storage property to indicate that
+  this property is optional and may not exist on all objects of this type.
+- Also inside the interface, define any methods that the object should have.
+  In this case, we have upgradeRam, which is a function that takes a number and returns a number.
+- Now that we have our interface, we can create an object that adheres to this interface.
+  This object should have all the properties defined in the interface
+  (except for optional ones, which are... optional), and the methods should be implemented.
 - Finally, we can use our object. We can call its upgradeRam method to increase its RAM.
 
 ```ts
@@ -772,7 +782,9 @@ interface DogOwner {
   getDogDetails(): string;
 }
 
-// Merging (reopening) an interface in TypeScript is a process where you declare an interface with the same name more than once, and TypeScript will merge their members.
+// Merging (reopening) an interface in TypeScript is a process
+// where you declare an interface with the same name more than once,
+// and TypeScript will merge their members.
 
 // Merging the interface
 interface Person {
@@ -788,7 +800,11 @@ const person: Person = {
   },
 };
 
-// Extending an interface in TypeScript is a way to create a new interface that inherits the properties and methods of an existing interface. You use the extends keyword to do this. When you extend an interface, the new interface will have all the members of the base interface, plus any new members that you add.
+// Extending an interface in TypeScript is a way to create
+// a new interface that inherits the properties and methods of an existing interface.
+//  You use the extends keyword to do this.
+// When you extend an interface,
+// the new interface will have all the members of the base interface, plus any new members that you add.
 
 // Extending the interface
 interface Employee extends Person {
@@ -827,11 +843,22 @@ const manager: Manager = {
 
 ## Challenge - Part 1
 
-- Define the Person interface Start by defining a Person interface with a name property of type string.
-- Define the DogOwner interface Next, define a DogOwner interface that extends Person and adds a dogName property of type string.
-- Define the Manager interface Then, define a Manager interface that extends Person and adds two methods: managePeople and delegateTasks. Both methods should have a return type of void.
-- Define the getEmployee function Now, define a function called getEmployee that returns a Person, DogOwner, or Manager. Inside this function, generate a random number and use it to decide which type of object to return. If the number is less than 0.33, return a Person. If it's less than 0.66, return a DogOwner. Otherwise, return a Manager.
-- Finally, create a variable called employee that can be a Person, DogOwner, or Manager, and assign it the return value of getEmployee. Then, log employee to the console.
+- Define the Person interface Start by defining a Person interface
+  with a name property of type string.
+- Define the DogOwner interface Next, define a DogOwner interface
+  that extends Person and adds a dogName property of type string.
+
+- Define the Manager interface Then, define a Manager interface
+  that extends Person and adds two methods: managePeople and delegateTasks.
+  Both methods should have a return type of void.
+
+- Define the getEmployee function Now, define a function called
+  getEmployee that returns a Person, DogOwner, or Manager. Inside this function,
+  generate a random number and use it to decide which type of object to return.
+  If the number is less than 0.33,
+  return a Person. If it's less than 0.66, return a DogOwner. Otherwise, return a Manager.
+- Finally, create a variable called employee that can be a Person, DogOwner,
+  or Manager, and assign it the return value of getEmployee. Then, log employee to the console.
 
 ```ts
 interface Person {
@@ -874,10 +901,18 @@ function getEmployee(): Person | DogOwner | Manager {
 
 ## Challenge - Part 2
 
-A type predicate in TypeScript is a special kind of return type for a function that not only returns a boolean, but also asserts that the argument is of a specific type if the function returns true. It's typically used in user-defined type guard functions to narrow down the type of a variable within a certain scope. The syntax is arg is Type, where arg is the function argument and Type is the type you're checking for.
+A type predicate in TypeScript is a special kind of return type for a
+function that not only returns a boolean, but also asserts that the argument is of a specific type
+if the function returns true. It's typically used in user-defined type guard functions
+to narrow down the type of a variable within a certain scope.
+The syntax is arg is Type, where arg is the function argument and Type is the type you're checking for.
 
-- Define the isManager function Define a function called isManager that takes an object of type Person | DogOwner | Manager and returns a boolean. This function should check if the managePeople method exists on the object, and return true if it does and false if it doesn't. The return type of this function should be a type predicate: obj is Manager.
-- Run your code to see if it works as expected. If employee is a Manager, you should see the output of the delegateTasks method in the console. If employee is a Person or DogOwner, there should be no output.
+- Define the isManager function Define a function called isManager that takes an object of
+  type Person | DogOwner | Manager and returns a boolean.
+  This function should check if the managePeople method exists on the object, and return true if it does and false if it doesn't. The return type of this function should be a type predicate: obj is Manager.
+- Run your code to see if it works as expected.
+  If employee is a Manager, you should see the output of the delegateTasks method in the console.
+  If employee is a Person or DogOwner, there should be no output.
 
 ```ts
 // function isManager(obj: Person | DogOwner | Manager): boolean {
@@ -895,7 +930,9 @@ if (isManager(employee)) {
 
 ## Interface vs Type Alias
 
-A type alias is a way to give a name to a type. It can represent primitive types, union types, intersection types, tuples, and any other types. Once defined, the alias can be used anywhere in place of the actual type.
+A type alias is a way to give a name to a type. It can represent primitive types,
+union types, intersection types, tuples, and any other types. Once defined,
+the alias can be used anywhere in place of the actual type.
 
 ```ts
 type Person = {
@@ -921,7 +958,8 @@ let john: Person = { name: "John", age: 30 };
 
 Key Differences
 
-- Type aliases can represent primitive types, union types, intersection types, tuples, etc., while interfaces are primarily used to represent the shape of an object.
+- Type aliases can represent primitive types, union types, intersection types, tuples, etc.,
+  while interfaces are primarily used to represent the shape of an object.
 
 ```ts
 // Type alias for a primitive type
@@ -935,7 +973,9 @@ let gameScore: Score = 100;
 let move: Direction = "up";
 ```
 
-- Interfaces can be merged using declaration merging. If you define an interface with the same name more than once, TypeScript will merge their definitions. Type aliases can't be merged in this way.
+- Interfaces can be merged using declaration merging. If you define an interface
+  with the same name more than once, TypeScript will merge their definitions.
+  Type aliases can't be merged in this way.
 
 - Interfaces can be implemented by classes, while type aliases cannot.
 - Type aliases can use computed properties, while interfaces cannot.
@@ -974,11 +1014,17 @@ let tiger: Animal = { [propName]: 5 };
 
 ## Tuples
 
-In TypeScript, a Tuple is a special type that allows you to create an array where the type of a fixed number of elements is known, but need not be the same - in other words it's an array with fixed length and ordered with fixed types. This is useful when you want to group different types of values together.
+In TypeScript, a Tuple is a special type that allows you to create an array
+where the type of a fixed number of elements is known,
+but need not be the same - in other words
+it's an array with fixed length and ordered with fixed types.
+This is useful when you want to group different types of values together.
 
 Tuples are useful when you want to return multiple values from a function.
 
-By default, tuples in TypeScript are not read-only. This means you can modify the values of the elements in the tuple.However, TypeScript does provide a way to make tuples read-only using the readonly keyword.
+By default, tuples in TypeScript are not read-only. This means you can modify
+the values of the elements in the tuple.However,
+TypeScript does provide a way to make tuples read-only using the readonly keyword.
 
 ```ts
 let person: [string, number] = ["john", 25];
@@ -1007,7 +1053,8 @@ console.log(susan);
 
 ## Enums
 
-Enums in TypeScript allow us to define a set of named constants. Using enums can make it easier to document intent, or create a set of distinct cases.
+Enums in TypeScript allow us to define a set of named constants.
+Using enums can make it easier to document intent, or create a set of distinct cases.
 
 ```ts
 enum ServerResponseStatus {
@@ -1033,9 +1080,13 @@ console.log(response);
 
 ## Enums - Gotcha : Reverse Mapping
 
-In a numeric enum, TypeScript creates a reverse mapping from the numeric values to the enum member names. This means that if you assign a numeric value to an enum member, you can use that numeric value anywhere the enum type is expected.
+In a numeric enum, TypeScript creates a reverse mapping from the numeric
+values to the enum member names. This means that if you assign a numeric value
+to an enum member, you can use that numeric value anywhere the enum type is expected.
 
-In a string enum, TypeScript does not create a reverse mapping. This means that if you assign a string value to an enum member, you cannot use that string value anywhere the enum type is expected. You must use the enum member itself.
+In a string enum, TypeScript does not create a reverse mapping.
+This means that if you assign a string value to an enum member,
+you cannot use that string value anywhere the enum type is expected. You must use the enum member itself.
 
 ```ts
 enum ServerResponseStatus {
@@ -1095,9 +1146,14 @@ function getServerResponse(): ServerResponse {
 ## Challenge
 
 - Define an enum named UserRole with members Admin, Manager, and Employee.
-- Define a type alias named User with properties id (number), name (string), role (UserRole), and contact (a tuple with two elements: email as string and phone as string).
-- Define a function named createUser that takes a User object as its parameter and returns a User object.
-- Call the createUser function with an object that matches the User type, store the result in a variable, and log the variable to the console.
+- Define a type alias named User with properties id (number),
+  name (string), role (UserRole), and contact
+  (a tuple with two elements: email as string and phone as string).
+- Define a function named createUser that takes a User object
+  as its parameter and returns a User object.
+
+- Call the createUser function with an object that matches the User type,
+  store the result in a variable, and log the variable to the console.
 
 ```ts
 // Define an enum named UserRole
@@ -1133,7 +1189,9 @@ console.log(user);
 
 ## Type Assertion
 
-Type assertion in TypeScript is a way to tell the compiler what the type of an existing variable is. This is especially useful when you know more about the type of a variable than TypeScript does.
+Type assertion in TypeScript is a way to tell the compiler what the type of
+an existing variable is. This is especially useful
+when you know more about the type of a variable than TypeScript does.
 
 ```ts
 let someValue: any = "This is a string";
@@ -1180,7 +1238,9 @@ const user: User = { name: "john", status: statusValue as Status };
 
 ## Type - 'unknown'
 
-The unknown type in TypeScript is a type-safe counterpart of the any type. It's like saying that a variable could be anything, but we need to perform some type-checking before we can use it.
+The unknown type in TypeScript is a type-safe counterpart of the any type.
+It's like saying that a variable could be anything,
+but we need to perform some type-checking before we can use it.
 
 "error instanceof Error" checks if the error object is an instance of the Error class.
 
@@ -1223,8 +1283,10 @@ try {
 
 ## Type - "never"
 
-In TypeScript, never is a type that represents the type of values that never occur.you can't assign any value to a variable of type never.
-TypeScript will give a compile error if there are any unhandled cases, helping ensure that all cases are handled.
+In TypeScript, never is a type that represents the type of values
+that never occur.you can't assign any value to a variable of type never.
+TypeScript will give a compile error if there are any unhandled cases,
+helping ensure that all cases are handled.
 
 ```ts
 // let someValue: never = 0;
@@ -1273,7 +1335,9 @@ console.log(getColorName(Color.Blue)); // Blue
 
 ## Modules - Global Scope "Gotcha"
 
-If your TypeScript files aren't modules (i.e., they don't have any import or export statements), they're treated as scripts in the global scope. In this case, declaring the same variable in two different files would cause a conflict.
+If your TypeScript files aren't modules (i.e., they don't have any import or
+export statements), they're treated as scripts in the global scope.
+In this case, declaring the same variable in two different files would cause a conflict.
 
 tutorial.ts
 
@@ -1346,9 +1410,13 @@ console.log(anotherStudent);
 
 ## Modules - Javascript Files
 
-When you set "allowJs": true in your tsconfig.json, TypeScript will process JavaScript files and can infer types to a certain extent based on the structure and usage of your JavaScript code.
+When you set "allowJs": true in your tsconfig.json,
+TypeScript will process JavaScript files and can infer types to a certain
+extent based on the structure and usage of your JavaScript code.
 
-However, TypeScript's ability to infer types from JavaScript is not as robust as when working with TypeScript files. For example, it might not be able to infer complex types or types that depend on runtime behavior.
+However, TypeScript's ability to infer types from JavaScript is not as robust as
+when working with TypeScript files. For example, it might not be able to infer complex types
+or types that depend on runtime behavior.
 
 - create example.js
 - export someValue, import in tutorial
@@ -1359,9 +1427,12 @@ However, TypeScript's ability to infer types from JavaScript is not as robust as
 
 ## Type Guarding
 
-Type guarding is a term in TypeScript that refers to the ability to narrow down the type of an object within a certain scope. This is usually done using conditional statements that check the type of an object.
+Type guarding is a term in TypeScript that refers to the ability to narrow down
+the type of an object within a certain scope.
+This is usually done using conditional statements that check the type of an object.
 
-In the context of TypeScript, a type guard is some expression that performs a runtime check that guarantees the type in some scope.
+In the context of TypeScript, a type guard is some expression that performs a runtime check
+that guarantees the type in some scope.
 
 ## Challenge - "typeof" guard
 
@@ -1376,9 +1447,12 @@ value = random < 0.33 ? "Hello" : random < 0.66 ? 123.456 : true;
 ```
 
 - Define the function checkValue that takes one parameter value of type ValueType.
-- Inside the function, use an if statement to check if value is of type string. If it is, log value converted to lowercase and then return from the function.
-- If value is not a string, use another if statement to check if value is of type number. If it is, log value formatted to two decimal places and then return from the function.
-- If value is neither a string nor a number, it must be a boolean. Log the string "boolean: " followed by the boolean value.
+- Inside the function, use an if statement to check if value is of type string.
+  If it is, log value converted to lowercase and then return from the function.
+- If value is not a string, use another if statement to check if value is of type number.
+  If it is, log value formatted to two decimal places and then return from the function.
+- If value is neither a string nor a number, it must be a boolean.
+  Log the string "boolean: " followed by the boolean value.
 - Finally, call the checkValue function with value as the argument.
 
 ```ts
@@ -1399,7 +1473,8 @@ checkValue(value);
 
 ## Challenge - Equality Narrowing
 
-In TypeScript, equality narrowing is a form of type narrowing that occurs when you use equality checks like === or !== in your code
+In TypeScript, equality narrowing is a form of type narrowing that occurs
+when you use equality checks like === or !== in your code
 
 - starter code
 
@@ -1411,9 +1486,12 @@ type Animal = Dog | Cat;
 
 - Define a function named makeSound that takes one parameter animal of type Animal.
 - Inside the function, use an if statement to check if animal.type is 'dog'.
-- If animal.type is 'dog', TypeScript knows that animal is a Dog in this block. In this case, call the bark method of animal.
-- If animal.type is not 'dog', TypeScript knows that animal is a Cat in the else block. In this case, call the meow method of animal.
-- Now you can call the makeSound function with an Animal as the argument. The function will call the appropriate method (bark or meow) depending on the type of the animal.
+- If animal.type is 'dog', TypeScript knows that animal is a Dog in this block.
+  In this case, call the bark method of animal.
+- If animal.type is not 'dog', TypeScript knows that animal is a Cat in the else block.
+  In this case, call the meow method of animal.
+- Now you can call the makeSound function with an Animal as the argument.
+  The function will call the appropriate method (bark or meow) depending on the type of the animal.
 
 ```ts
 function makeSound(animal: Animal) {
@@ -1429,7 +1507,10 @@ function makeSound(animal: Animal) {
 
 ## Challenge - check for property
 
-The "in" operator in TypeScript is used to narrow down the type of a variable when used in a conditional statement.It checks if a property or method exists on an object. If it exists, TypeScript will narrow the type to the one that has this property.
+The "in" operator in TypeScript is used to narrow down the type of a variable
+when used in a conditional statement.
+It checks if a property or method exists on an object.
+If it exists, TypeScript will narrow the type to the one that has this property.
 
 - starter code
 
@@ -1525,7 +1606,8 @@ console.log(random);
 
 ## Challenge - Type Predicate
 
-A type predicate is a function whose return type is a special kind of type that can be used to narrow down types within conditional blocks.
+A type predicate is a function whose return type is a special kind of type
+that can be used to narrow down types within conditional blocks.
 
 - starter code
 
@@ -1554,10 +1636,13 @@ const person = randomPerson();
 - Define the Person and Student types. Student should have a study method and Person should have a login method.
 - Create a function named isStudent that takes a parameter person of type Person.
 - In the function signature, specify a return type that is a type predicate: person is Student.
-- In the function body, use a type assertion to treat person as a Student, and check if the study - method is not undefined. This will return true if person is a Student, and false otherwise.
+- In the function body, use a type assertion to treat person as a Student,
+  and check if the study - method is not undefined. This will return true if person is a Student, and false otherwise.
 - Use the isStudent function in an if statement with person as the argument.
-- In the if block (where isStudent(person) is true), call the study method on person. TypeScript knows that person is a Student in this block, so this is safe.
-- In the else block (where isStudent(person) is false), call the login method on person. This is safe because if person is not a Student, it must be a Person, and all Person objects have a login method.
+- In the if block (where isStudent(person) is true), call the study method on person.
+  TypeScript knows that person is a Student in this block, so this is safe.
+- In the else block (where isStudent(person) is false), call the login method on person.
+  This is safe because if person is not a Student, it must be a Person, and all Person objects have a login method.
 
 ```ts
 function isStudent(person: Person): person is Student {
@@ -1612,7 +1697,9 @@ if (isStudent(person)) {
 
 ## Challenge - Discriminated Unions and exhaustive check using the never type
 
-A discriminated union in TypeScript is a type that can be one of several different types, each identified by a unique literal property (the discriminator), allowing for type-safe handling of each possible variant.
+A discriminated union in TypeScript is a type that can be one of several
+different types, each identified by a unique literal property (the discriminator),
+allowing for type-safe handling of each possible variant.
 
 - starter code
 
@@ -1632,11 +1719,16 @@ type DecrementAction = {
 type Action = IncrementAction | DecrementAction;
 ```
 
-- Write a reducer function that takes the current state and an action, and returns the new state. The reducer function should use a switch statement or if-else chain on the type property of the action to handle each action type differently.
+- Write a reducer function that takes the current state and an action, and returns the new state.
+  The reducer function should use a switch statement
+  or if-else chain on the type property of the action to handle each action type differently.
 
-- In the default case of the switch statement or the final else clause, perform an exhaustive check by assigning the action to a variable of type never. If there are any action types that haven't been handled, TypeScript will give a compile error.
+- In the default case of the switch statement or the final else clause,
+  perform an exhaustive check by assigning the action to a variable of type never.
+  If there are any action types that haven't been handled, TypeScript will give a compile error.
 
-- Implement the logic for each action type in the reducer function. This typically involves returning a new state based on the current state and the properties of the action.
+- Implement the logic for each action type in the reducer function.
+  This typically involves returning a new state based on the current state and the properties of the action.
 
 - Use the reducer function in your application to handle actions and update the state.
 
@@ -1680,9 +1772,11 @@ const newState = reducer(15, {
 
 ## Generics - Fundamentals
 
-Generics in TypeScript are a way to create reusable code components that work with a variety of types as opposed to a single one.
+Generics in TypeScript are a way to create reusable code components
+that work with a variety of types as opposed to a single one.
 
-In other words, generics allow you to write a function or a class that can work with any data type. You can think of generics as a kind of variable for types.
+In other words, generics allow you to write a function or a class
+that can work with any data type. You can think of generics as a kind of variable for types.
 
 ```ts
 // In TypeScript, you can declare an array using two syntaxes:
@@ -1849,7 +1943,8 @@ const student: Student = {
 
 // printName(product);
 
-// The extends { name: string } part is a type constraint on T. It means that T can be any type, but it must be an object that has at least a name property of type string.
+// The extends { name: string } part is a type constraint on T.
+// It means that T can be any type, but it must be an object that has at least a name property of type string.
 // In other words, T must have at least the same properties and methods that { name: string } has.
 function printName<T extends { name: string }>(input: T): void {
   console.log(input.name);
@@ -2042,7 +2137,11 @@ tours.map((tour) => {
 
 ## Typescript Declaration File
 
-In TypeScript, .d.ts files, also known as declaration files,consist of type definitions, and are used to provide types for JavaScript code. They allow TypeScript to understand the shape and types of objects, functions, classes, etc., in JavaScript libraries, enabling type checking and autocompletion in TypeScript code that uses these libraries.
+In TypeScript, .d.ts files, also known as declaration files,consist of type definitions,
+and are used to provide types for JavaScript code.
+They allow TypeScript to understand the shape and types of objects,
+functions, classes, etc., in JavaScript libraries, enabling type checking
+and autocompletion in TypeScript code that uses these libraries.
 
 - create types.ts
 - export RandomType
@@ -2104,9 +2203,12 @@ This project's TypeScript configuration is defined in the `tsconfig.json` file. 
 
 ## Classes - Intro
 
-Classes in JavaScript are a blueprint for creating objects. They encapsulate data with code to manipulate that data. Classes in JavaScript support inheritance and can be used to create more complex data structures.
+Classes in JavaScript are a blueprint for creating objects.
+They encapsulate data with code to manipulate that data.
+Classes in JavaScript support inheritance and can be used to create more complex data structures.
 
-A constructor in a class is a special method that gets called when you create a new instance of the class. It's often used to set the initial state of the object.
+A constructor in a class is a special method that gets called
+when you create a new instance of the class. It's often used to set the initial state of the object.
 
 ```ts
 class Book {
