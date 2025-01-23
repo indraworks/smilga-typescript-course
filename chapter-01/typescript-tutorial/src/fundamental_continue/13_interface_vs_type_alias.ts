@@ -42,6 +42,7 @@ interface Person {
 
 class Employee implements Person {
   name: string;
+
   constructor(name: string) {
     this.name = name;
   }
@@ -49,3 +50,16 @@ class Employee implements Person {
     console.log(` hi hello ${this.name}`);
   }
 }
+
+//isntanciate di ts
+//dgn pasing constructor yg ada paramnya
+let jhon = new Employee("Jhon");
+jhon.greet(); //output 'hi he;;o Jhon
+
+//compute proerties pada type alias :
+const propName = "age";
+
+type Animal = { [propName]: number };
+
+let tiger: Animal = { [propName]: 7 };
+console.log(tiger);
