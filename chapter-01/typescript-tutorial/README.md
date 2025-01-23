@@ -1239,6 +1239,9 @@ const statusValue = "pending";
 const user: User = { name: "john", status: statusValue as Status };
 ```
 
+
+
+
 ## Type - 'unknown'
 
 The unknown type in TypeScript is a type-safe counterpart of the any type.
